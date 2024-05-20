@@ -1,0 +1,142 @@
+_schema-version: "3.1"
+ID: cap-redis
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: cap-redis-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: cap-redis-auth
+  - name: cap-redis-db
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+    readiness-health-check-http-endpoint: /health
+    readiness-health-check-type: http
+  build-parameters:
+    builder: npm
+- name: cap-redis
+  type: approuter.nodejs
+  path: app/router
+  properties:
+    EXT_SESSION_MGT: "{\n  \"instanceName\": \"cap-redis-redis\",\n  \"storageType\":
+      \"redis\",\n  \"sessionSecret\": \"G7h2xP8RjWmQ9uV3bLfZ1cDnJ4oB5sY6kMtH0aE2wX9vFi8zK7yCq3R\",\n
+      \ \"defaultRetryTimeout\": 10000,\n  \"backOffMultiplier\": 10            \n}\n"
+    SVC2AR_STORE_CSRF_IN_EXTERNAL_SESSION: true
+  requires:
+  - name: srv-api
+    group: destinations
+    properties:
+      forwardAuthToken: true
+      name: srv-api
+      url: ~{srv-url}
+  - name: cap-redis-auth
+  - name: cap-redis-redis
+  # - name: cap-redis-repo-runtime
+  # - name: cap-redis-destination-service
+  #   group: destinations
+  #   properties:
+  #     forwardAuthToken: false
+  #     name: ui5
+  #     url: https://ui5.sap.com
+  parameters:
+    disk-quota: 256M
+    keep-existing-routes: true
+    memory: 256M
+- name: cap-redis-db-deployer
+  type: hdb
+  path: gen/db
+  requires:
+  - name: cap-redis-db
+  parameters:
+    buildpack: nodejs_buildpack
+# - name: cap-redis-app-content
+#   type: com.sap.application.content
+#   path: .
+#   requires:
+#   - name: cap-redis-repo-host
+#     parameters:
+#       content-target: true
+#   build-parameters:
+#     build-result: resources
+#     requires:
+#     - artifacts:
+#       - nsbooksui.zip
+#       name: nsbooksui
+#       target-path: resources/
+# - name: nsbooksui
+#   type: html5
+#   path: app/booksui
+#   build-parameters:
+#     build-result: dist
+#     builder: custom
+#     commands:
+#     - npm install
+#     - npm run build:cf
+#     supported-platforms: []
+resources:
+- name: cap-redis-auth
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      tenant-mode: dedicated
+      xsappname: cap-redis-${org}-${space}
+    path: ./xs-security.json
+    service: xsuaa
+    service-plan: application
+- name: cap-redis-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
+- name: cap-redis-redis
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      engine_version: "6.0"
+      eviction_policy: noeviction
+    service: redis-cache
+    service-plan: trial
+# - name: cap-redis-repo-host
+#   type: org.cloudfoundry.managed-service
+#   parameters:
+#     service: html5-apps-repo
+#     service-name: cap-redis-html5-srv
+#     service-plan: app-host
+# - name: cap-redis-repo-runtime
+#   type: org.cloudfoundry.managed-service
+#   parameters:
+#     service: html5-apps-repo
+#     service-plan: app-runtime
+
+# - name: cap-redis-destination-service
+#   type: org.cloudfoundry.managed-service
+#   parameters:
+#     config:
+#       HTML5Runtime_enabled: false
+#       init_data:
+#         instance:
+#           destinations:
+#           - Authentication: NoAuthentication
+#             Name: ui5
+#             ProxyType: Internet
+#             Type: HTTP
+#             URL: https://ui5.sap.com
+#           existing_destinations_policy: update
+#       version: 1.0.0
+#     service: destination
+#     service-name: cap-redis-destination-service
+#     service-plan: lite
+parameters:
+  # deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm ci
+    - npx cds build --production

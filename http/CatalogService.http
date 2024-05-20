@@ -1,0 +1,38 @@
+@server = http://localhost:4004
+@auth = Authorization: Basic alice:
+
+
+### CatalogService.Books
+GET {{server}}/odata/v4/catalog/Books
+Content-Type: application/json
+{{auth}}
+
+
+### CatalogService.Books
+POST {{server}}/odata/v4/catalog/Books
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": 27363361,
+  "title": "title-27363361",
+  "stock": 37
+}
+
+
+### CatalogService.Books
+PATCH {{server}}/odata/v4/catalog/Books/27363361
+Content-Type: application/json
+{{auth}}
+
+{
+  "ID": 27363361,
+  "title": "title-27363361",
+  "stock": 37
+}
+
+
+### CatalogService.Books
+DELETE {{server}}/odata/v4/catalog/Books/27363361
+Content-Type: application/json
+{{auth}}

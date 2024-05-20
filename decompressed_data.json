@@ -1,0 +1,40 @@
+{
+  "externalSessionId": "191eb52c15194011b5a5c1c9e2ce8d65",
+  "externalSessionExpiration": 1716279985,
+  "jwtRefreshStarted": true,
+  "user": {
+    "userId": "n/a",
+    "name": "n/a",
+    "token": {
+      "accessToken": "eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYTJjN2M4NGV0cmlhbC5hdXRoZW50aWNhdGlvbi51czEwLmhhbmEub25kZW1hbmQuY29tL3Rva2VuX2tleXMiLCJraWQiOiJkZWZhdWx0LWp3dC1rZXktZDk1YjYxNzlkOCIsInR5cCI6IkpXVCIsImppZCI6ICJaSmZkc0hRM2x5N2pRZ2IzVkcwem03anM1cmFlcC82TUhkczNQeUJ0ckJjPSJ9.eyJqdGkiOiIxOTFlYjUyYzE1MTk0MDExYjVhNWMxYzllMmNlOGQ2NSIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJzdWJhY2NvdW50aWQiOiI3NWJhOWExOS1iNDM0LTQ3NDMtODllNi00YTlkOWFiM2U1ZTgiLCJ6ZG4iOiJhMmM3Yzg0ZXRyaWFsIn0sInN1YiI6InNiLWNhcC1yZWRpcy1hMmM3Yzg0ZXRyaWFsLWRldiF0MjY2MDMwIiwiYXV0aG9yaXRpZXMiOlsidWFhLnJlc291cmNlIl0sInNjb3BlIjpbInVhYS5yZXNvdXJjZSJdLCJjbGllbnRfaWQiOiJzYi1jYXAtcmVkaXMtYTJjN2M4NGV0cmlhbC1kZXYhdDI2NjAzMCIsImNpZCI6InNiLWNhcC1yZWRpcy1hMmM3Yzg0ZXRyaWFsLWRldiF0MjY2MDMwIiwiYXpwIjoic2ItY2FwLXJlZGlzLWEyYzdjODRldHJpYWwtZGV2IXQyNjYwMzAiLCJncmFudF90eXBlIjoiY2xpZW50X2NyZWRlbnRpYWxzIiwicmV2X3NpZyI6ImI1OWEzNTBkIiwiaWF0IjoxNzE2MjM2Nzg1LCJleHAiOjE3MTYyNzk5ODUsImlzcyI6Imh0dHBzOi8vYTJjN2M4NGV0cmlhbC5hdXRoZW50aWNhdGlvbi51czEwLmhhbmEub25kZW1hbmQuY29tL29hdXRoL3Rva2VuIiwiemlkIjoiNzViYTlhMTktYjQzNC00NzQzLTg5ZTYtNGE5ZDlhYjNlNWU4IiwiYXVkIjpbInNiLWNhcC1yZWRpcy1hMmM3Yzg0ZXRyaWFsLWRldiF0MjY2MDMwIiwidWFhIl19.FabQ5PPzeVb1R5FbQugTXdowbTiRfRhhlNoudCIGgAz7a_NQ7I3MWu8XjTm8j60iOBrZyCvcoSIKZ8ioW6Dw8-cZnQCiCkUb7XiKyBbRsRT_r8vQ2W3WnR-mQFJl7msfFIYJS7QCEXzWtr4tHxN5balCNrnZ-W27rU-lytVxpuFTBcGE3vjdEcWRWVRYuq_KYzToqTH8f_qtsVQpm4BcJbioO3klXZ-1bBTNygvmBRGLuB1MV8HJlJe6P4hQv_aoNsXSv85wrWWj5rNllg2q0s_Go2oF0u7XrT7fTFWAwBt4vfxpoRzEiQnsuaWNvXR_--uYo9QXPg8FDcrVoxshpw",
+      "expiryDate": 1717955518265706,
+      "oauthOptions": {
+        "tenantmode": "dedicated",
+        "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+        "subaccountid": "75ba9a19-b434-4743-89e6-4a9d9ab3e5e8",
+        "credential-type": "instance-secret",
+        "clientid": "sb-cap-redis-a2c7c84etrial-dev!t266030",
+        "xsappname": "cap-redis-a2c7c84etrial-dev!t266030",
+        "clientsecret": "t9UimGG6t5RRHFe4nD7hmPVGdpo=",
+        "serviceInstanceId": "29fb9fcd-376f-4631-ad8f-f250913c757a",
+        "url": "https://a2c7c84etrial.authentication.us10.hana.ondemand.com",
+        "uaadomain": "authentication.us10.hana.ondemand.com",
+        "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxRIf9WUH3E0+ey3tQ/Uw\noiRUq98GHBiIBYEL1LJKKzylEreHmYMva4/TBFpD4YPw5Ze/g1+63ZgI9wvXQkEp\n5qvMWD2XQVZkQ8Lzy9vmgqddX4sRX4cjjy5l90BB18Uu5J0572wbQUwc+CUgUQXI\n+7ZnQAWyULvv4ZfMPIHIe8MFOsKzXj4iLTUsqJe8d9Oh0nL9o+/QJz17uAW/QNJ/\nhbmoe4N9cI6Ag0EllQIx3+DLZS92RDLX8rNzU26VM18dYKyoB9KeEY6ik/GYYl5F\ngI8KAPC5HnH/jK86PURVdSRbKY7qJcnb8/uMmVWT3rPWAFHYJfz21fUiT6pw9R7A\nCwIDAQAB\n-----END PUBLIC KEY-----",
+        "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+        "identityzone": "a2c7c84etrial",
+        "identityzoneid": "75ba9a19-b434-4743-89e6-4a9d9ab3e5e8",
+        "tenantid": "75ba9a19-b434-4743-89e6-4a9d9ab3e5e8",
+        "zoneid": "75ba9a19-b434-4743-89e6-4a9d9ab3e5e8"
+      }
+    },
+    "tenantid": "75ba9a19-b434-4743-89e6-4a9d9ab3e5e8",
+    "scopes": [
+      "uaa.resource"
+    ],
+    "tenant": "a2c7c84etrial"
+  },
+  "xsrf": {
+    "token": "c0c4e668978ab000-nQmQ_eNdx9Dlb0FMILLwpH_3Y5M",
+    "secret": "ALns0hkxIO_px40ixa3wmzmDEQaUnmZlx7qog8XSM-Y"
+  }
+}
