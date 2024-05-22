@@ -23,7 +23,7 @@
         "start": "cds-serve",
         "build": "rimraf resources mta_archives && mbt build --mtar archive",
         "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
-        "watch-booksui": "cds watch --open booksui/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-booksui2": "cds watch --open booksui2/webapp/index.html?sap-ui-xx-viewCache=false",
         "undeploy": "cf undeploy cap-redis --delete-services --delete-service-keys --delete-service-brokers"
     },
     "cds": {
@@ -38,6 +38,6 @@
         "node": "^20"
     },
     "sapux": [
-        "app/booksui"
+        "app/booksui2"
     ]
 }
