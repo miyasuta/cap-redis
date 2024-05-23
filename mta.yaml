@@ -23,9 +23,14 @@ modules:
   type: approuter.nodejs
   path: app/router
   properties:
-    EXT_SESSION_MGT: "{\n  \"instanceName\": \"cap-redis-redis\",\n  \"storageType\":
-      \"redis\",\n  \"sessionSecret\": \"G7h2xP8RjWmQ9uV3bLfZ1cDnJ4oB5sY6kMtH0aE2wX9vFi8zK7yCq3R\",\n
-      \ \"defaultRetryTimeout\": 10000,\n  \"backOffMultiplier\": 10            \n}\n"
+    EXT_SESSION_MGT: |
+      {
+        "instanceName": "cap-redis-redis",
+        "storageType": "redis",
+        "sessionSecret": "G7h2xP8RjWmQ9uV3bLfZ1cDnJ4oB5sY6kMtH0aE2wX9vFi8zK7yCq3R",
+        "defaultRetryTimeout": 10000,
+        "backOffMultiplier": 10
+      }
     SVC2AR_STORE_CSRF_IN_EXTERNAL_SESSION: true
   requires:
   - name: srv-api
